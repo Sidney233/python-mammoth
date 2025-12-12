@@ -5,7 +5,7 @@ import shutil
 import sys
 
 import mammoth
-from . import writers
+import writers
 
 
 def main():

@@ -1,6 +1,5 @@
-from ..lists import flat_map
-from .xmlparser import parse_xml, XmlElement
-
+from lists import flat_map
+from xmlparser import parse_xml, XmlElement, parse_xml_str
 
 _namespaces = [
     # Transitional format
@@ -34,6 +33,9 @@ def read(fileobj):
     i = parse_xml(fileobj, _namespaces)
     return _collapse_alternate_content(i)[0]
 
+def read_str(xml_str):
+    i = parse_xml_str(xml_str, _namespaces)
+    return _collapse_alternate_content(i)[0]
 
 def _collapse_alternate_content(node):
     if isinstance(node, XmlElement):

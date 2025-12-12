@@ -1,4 +1,4 @@
-from ..lists import flat_map
+from mammoth.lists import flat_map
 from .nodes import TextNode, Tag, Element, ForceWrite, NodeVisitor
 
 
